@@ -1,0 +1,25 @@
+name: My First GitHub Action
+
+on: [push, workflow_dispatch]
+
+jobs:
+  practical:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Show date
+        run: date
+
+      - name: Create a text file
+        run: echo "Hello from GitHub Actions" > practical.txt
+
+      - name: Run Python program
+        run: python3 -c "print('Hello from Python')"
